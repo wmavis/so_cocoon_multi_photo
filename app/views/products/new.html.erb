@@ -6,8 +6,10 @@
   <h2> photo</h2>
   <%= f.simple_fields_for :photos do |photo|%>
     <%= render 'photo_fields', f:photo %>
-    <%=link_to_add_association 'add photo', f, :photos%>
- <%end%>
+    <br />
+  <%end%>
+  <%= link_to_add_association 'add photo', f, :photos%>
+  <br />
   <%=f.submit%>
 <% end %>
 <%= link_to 'Back', products_path %>
