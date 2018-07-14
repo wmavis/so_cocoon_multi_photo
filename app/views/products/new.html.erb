@@ -4,12 +4,13 @@
   <%= f.input :description, as: :text%>
   <%= f.select :category_id , @categorys.collect{|c|[c.name,c.id]},include_blank:false %></br>
   <h2> photo</h2>
-  <%= f.simple_fields_for :photos do |photo|%>
-    <%= render 'photo_fields', f:photo %>
-    <br />
-  <%end%>
-  <%= link_to_add_association 'add photo', f, :photos%>
-  <br />
+  <div class="nested-fields">
+    <%= f.simple_fields_for :photos do |photo|%>
+      <%= render 'photo_fields', f:photo %>
+      <br />
+    <%end%>
+    <%= link_to_add_association 'add photo', f, :photos%>
+  </div>
   <%=f.submit%>
 <% end %>
 <%= link_to 'Back', products_path %>
