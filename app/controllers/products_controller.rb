@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.photos.new
+    @categorys = Category.all
   end
 
   # GET /products/1/edit
